@@ -1,88 +1,145 @@
-<!doctype html>
-<html>
-	<head>
-		<title>Game of Thrones</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hanzala DevOps CI/CD Pipeline</title>
 
-		<meta charset="utf-8" />
-		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		  
-	</head>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
 
-	<body>
-		<center><h1>Game of Thrones</h1></center>
-			<center><h1>this is work</h1></center>
-		<hr>
-		<div id="topOfPage">
-			<center><img src="images/GOT.jpg" align="center"></img></center>
-			<p>Game of Thrones is an American fantasy drama television series created by David Benioff and D. B. Weiss. It is an adaptation of A Song of Ice and Fire, George R. R. Martin's series of fantasy novels, the first of which is 'A Game of Thrones'!!!</p>
+body{
+    background: linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    min-height:100vh;
+}
 
-			<p><h3>General Plot:</h3> A story of greed, lust, thirst for power, ruthlessness, barbarity - GOT is a story of seven kingdoms vying and sparring over absolute power and control to the Iron Throne.</p>
-			<iframe align = "right" width="400" height="200" src="https://www.youtube.com/embed/522l0YE9hRQ" frameborder="0" allowfullscreen></iframe>
-		</div>
-		<hr>
-		<p><h3>Warring kingdoms:</h3>
-			<ul>
-				<li>Kingdom of the North!</li>
-				<li>Kingdom of the Mountain and the Vale!</li>
-				<li>Kingdom of the Isles and Rivers</li>
-				<li>Kingdom of the Rock</li>
-				<li>Kingdom of the Stormlands</li>
-				<li>Kingdom of the Reach</li>
-				<li>Principality of Dorne</li>
-			</ul>
-		</p>
-		<hr>
-		<center>
-			<ins><h3>Kingdoms with their Lords or rulers and their symbols</h3></ins>
-			<table border="1">
-				<thead>
-					<tr>
-						<th>Kingdom</th>
-						<th>Lords</th>
-						<th>Symbol</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>The North</td>
-						<td>Stark of Winterfell</td>
-						<td align="center"><a href="http://gameofthrones.wikia.com/wiki/Winterfell"><img src="images/HouseStark.png" height="100" width="100"></a></td>
-					</tr>
-					<tr>
-						<td>Kingdom of the Isles and Rivers</td>
-						<td>Harren Hoare</td>
-						<td align="center"><a href="http://gameofthrones.wikia.com/wiki/Harren_Hoare"><img src="images/Harren_Hoare.png" height="100" width="100"></a></td>
-					</tr>
-					<tr>
-						<td>The Vale</td>
-						<td>Arryn of the Eyrie</td>
-						<td align="center"><a href="http://gameofthrones.wikia.com/wiki/House_Arryn"><img src="images/Arryn.png" height="100" width="100"></a></td>
-					</tr>
-					<tr>
-						<td>The Westernlands</td>
-						<td>Lannister of Casterly Rock</td>
-						<td align="center"><a href="http://gameofthrones.wikia.com/wiki/House_Lannister"><img src="images/Lannister.png" height="100" width="100"></a></td>
-					</tr>
-					<tr>
-						<td>The Stormlands</td>
-						<td>Baratheon of Storm's End</td>
-						<td align="center"><a href="http://gameofthrones.wikia.com/wiki/House_Baratheon"><img src="images/Baratheon.png" height="100" width="100"></a></td>
-					</tr>
-					<tr>
-						<td>The Riverlands</td>
-						<td>Tully of Riverrun</td>
-						<td align="center"><a href="http://gameofthrones.wikia.com/wiki/House_Gardener"><img src="images/Gardner.png" height="100" width="100"></a></td>
-					</tr>
-					<tr>
-						<td>Dorne</td>
-						<td>Martell of Sunspear</td>
-						<td align="center"><a href="http://gameofthrones.wikia.com/wiki/House_Martell"><img src="images/Martell.png" height="100" width="100"></a></td>
-					</tr>
-				</tbody>
-			</table>
-		</center>
-		<p>Dedicated to all <strong>Game of Thrones</strong><sup>&reg;</sup> fans</p>
-		<p><a href="#topOfPage">top</a></p>
-	</body>
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    text-align:center;
+    padding-top:60px;
+}
+
+h1{
+    font-size:60px;
+    color:#38bdf8;
+}
+
+.subtitle{
+    font-size:22px;
+    margin-top:15px;
+    color:#cbd5e1;
+}
+
+.status{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 25px;
+    background:#22c55e;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.pipeline{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-top:70px;
+}
+
+.step{
+    width:180px;
+    background:#1e293b;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(56,189,248,.3);
+    transition:0.3s;
+}
+
+.step:hover{
+    transform:translateY(-5px);
+}
+
+.step h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.footer{
+    margin-top:70px;
+    color:#94a3b8;
+}
+
+.version{
+    margin-top:20px;
+    color:#facc15;
+    font-size:20px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🚀 DevOps CI/CD Pipeline</h1>
+
+<p class="subtitle">
+Automated Build, Test & Deployment using Jenkins and Tomcat
+</p>
+
+<div class="status">
+✅ DEPLOYMENT SUCCESSFUL
+</div>
+
+<div class="pipeline">
+
+<div class="step">
+<h3>GitHub</h3>
+<p>Source Code</p>
+</div>
+
+<div class="step">
+<h3>Jenkins</h3>
+<p>CI/CD Automation</p>
+</div>
+
+<div class="step">
+<h3>Build</h3>
+<p>Apache Ant</p>
+</div>
+
+<div class="step">
+<h3>Testing</h3>
+<p>JUnit Reports</p>
+</div>
+
+<div class="step">
+<h3>Deploy</h3>
+<p>Tomcat Server</p>
+</div>
+
+</div>
+
+<div class="version">
+🔥 VERSION 2.0 - HANZALA TEST BUILD
+</div>
+
+<div class="footer">
+Created By Hanzala Shaikh | DevOps Engineer
+</div>
+
+</div>
+
+</body>
 </html>
